@@ -18,6 +18,22 @@ table {
 	text-align: center;
 }
 
-.center {
+.centertext {
 	text-align: center;
+}
+
+input{
+	outline:none;
+	/*border:none;*/
+}
+
+.numwidth {
+	width:60px;
+}
+
+.ib {
+	display:inline-block;
+}
+.it {
+	display:inline-table;
 }

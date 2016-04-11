@@ -67,44 +67,79 @@
 	</div>
 
 	<div class="container content-container center">
-		<table border="1">
-			<tr>
-				<td>Attr:</td>
-				<td>STR</td>
-				<td>CON</td>
-				<td>DEX</td>
-				<td>INT</td>
-				<td>WIS</td>
-				<td>CHA</td>
-			</tr>
-			<tr>
-				<td>Score:</td>
-				<td><input class="center" type="number" id="str" value="8"></td>
-				<td><input class="center" type="number" id="con" value="8"></td>
-				<td><input class="center" type="number" id="dex" value="8"></td>
-				<td><input class="center" type="number" id="int" value="8"></td>
-				<td><input class="center" type="number" id="wis" value="8"></td>
-				<td><input class="center" type="number" id="cha" value="8"></td>
-			</tr>
-			<tr>
-				<td>Mod:</td>
-				<td id="strmod">-1</td>
-				<td id="conmod">-1</td>
-				<td id="dexmod">-1</td>
-				<td id="intmod">-1</td>
-				<td id="wismod">-1</td>
-				<td id="chamod">-1</td>
-			</tr>
-			<tr>
-				<td>Mod+Lvl:</td>
-				<td id="strmodlvl">0</td>
-				<td id="conmodlvl">0</td>
-				<td id="dexmodlvl">0</td>
-				<td id="intmodlvl">0</td>
-				<td id="wismodlvl">0</td>
-				<td id="chamodlvl">0</td>
-			</tr>
-		</table>
+		<div class="ib">
+			<table border="1" class="ib">
+				<tr>
+					<td>Attr:</td>
+					<td>STR</td>
+					<td>CON</td>
+					<td>DEX</td>
+					<td>INT</td>
+					<td>WIS</td>
+					<td>CHA</td>
+				</tr>
+				<tr>
+					<td>Score:</td>
+					<td><input class="centertext numwidth" type="number" id="str" value="8"></td>
+					<td><input class="centertext numwidth" type="number" id="con" value="8"></td>
+					<td><input class="centertext numwidth" type="number" id="dex" value="8"></td>
+					<td><input class="centertext numwidth" type="number" id="int" value="8"></td>
+					<td><input class="centertext numwidth" type="number" id="wis" value="8"></td>
+					<td><input class="centertext numwidth" type="number" id="cha" value="8"></td>
+				</tr>
+				<tr>
+					<td>Mod:</td>
+					<td id="strmod">-1</td>
+					<td id="conmod">-1</td>
+					<td id="dexmod">-1</td>
+					<td id="intmod">-1</td>
+					<td id="wismod">-1</td>
+					<td id="chamod">-1</td>
+				</tr>
+				<tr>
+					<td>Mod+Lvl:</td>
+					<td id="strmodlvl">0</td>
+					<td id="conmodlvl">0</td>
+					<td id="dexmodlvl">0</td>
+					<td id="intmodlvl">0</td>
+					<td id="wismodlvl">0</td>
+					<td id="chamodlvl">0</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="ib" style="margin-left:20px;">
+			<table>
+				<tr>
+					<td>
+						<p class="it"> Defense&nbsp;</p>
+						<p class="it" id="ac"> AC: -1 </p>
+						<p class="it" id="pd">&nbsp;PD: -1 </p>
+						<p class="it" id="md">&nbsp;MD: -1 </p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p style="display:inline-table">HP:</p>
+						<input class="center numwidth" type="number" id="str" value="8"> /
+						<input class="center numwidth" type="number" id="str" value="8">
+
+						<p style="display:inline-table">Recoveries:</p>
+						<input class="center numwidth" type="number" id="str" value="8"> /
+						<input class="center numwidth" type="number" id="str" value="8">
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="container content-container center">
+		<h2> Inventory </h2>
+	</div>
+
+	<div class="container content-container center">
+		<h2> Powers </h2>
 	</div>
 
 <script type="text/javascript" src="js/13age.js"></script>
