@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>13A Character Tracker</title>
+  <meta name="author" content="Rishi Sinha">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap-select.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap-select.js"></script>
+  <script type="text/javascript" src="js/updown.js"></script>
+  <!-- // <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> -->
+   <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> -->
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	<div class="container content-container center" style="margin-top:35px; margin-bottom:20px">
+			<h1> 13th Age Character Tracker </h1>
+	</div>
+	
+	<div class="container content-container center">
+		<h2> Character Attributes </h2>
+		<p style="display:inline-block">Name:</p>
+		<input type="text">
+
+		<p style="display:inline-block">Race:</p>
+		<select class="selectpicker">
+			<option>Dark Elf</option>
+			<option>Dwarf</option>
+			<option>Gnome</option>
+			<option>Half-Elf</option>
+			<option>Half-Orc</option>
+			<option>Halfling</option>
+			<option>High Elf</option>
+			<option>Human</option>
+			<option>Wood Elf</option>
+		</select>
+
+		<p style="display:inline-block">Class:</p>
+		<select class="selectpicker">
+			<option>Barbarian</option>
+			<option>Bard</option>
+			<option>Cleric</option>
+			<option>Fighter</option>
+			<option>Paladin</option>
+			<option>Ranger</option>
+			<option>Rogue</option>
+			<option>Sorcerer</option>
+			<option>Wizard</option>
+		</select>
+
+		<p style="display:inline-block">Level:</p>
+		<button id="leveldown">-</button>
+		<input type="number" id="level" value="1">
+		<button id="levelup">+</button>
+	</div>
+
+	<div class="container content-container center">
+		<table border="1">
+			<tr>
+				<td>Attr:</td>
+				<td>STR</td>
+				<td>CON</td>
+				<td>DEX</td>
+				<td>INT</td>
+				<td>WIS</td>
+				<td>CHA</td>
+			</tr>
+			<tr>
+				<td>Score:</td>
+				<td><input class="center" type="number" id="str" value="8"></td>
+				<td><input class="center" type="number" id="con" value="8"></td>
+				<td><input class="center" type="number" id="dex" value="8"></td>
+				<td><input class="center" type="number" id="int" value="8"></td>
+				<td><input class="center" type="number" id="wis" value="8"></td>
+				<td><input class="center" type="number" id="cha" value="8"></td>
+			</tr>
+			<tr>
+				<td>Mod:</td>
+				<td id="strmod">-1</td>
+				<td id="conmod">-1</td>
+				<td id="dexmod">-1</td>
+				<td id="intmod">-1</td>
+				<td id="wismod">-1</td>
+				<td id="chamod">-1</td>
+			</tr>
+			<tr>
+				<td>Mod+Lvl:</td>
+				<td id="strmodlvl">0</td>
+				<td id="conmodlvl">0</td>
+				<td id="dexmodlvl">0</td>
+				<td id="intmodlvl">0</td>
+				<td id="wismodlvl">0</td>
+				<td id="chamodlvl">0</td>
+			</tr>
+		</table>
+	</div>
+
+<script type="text/javascript" src="js/13age.js"></script>
+  
+</body>
+</html>
