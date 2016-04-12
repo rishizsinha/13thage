@@ -82,7 +82,9 @@ $("#cha").change(function(){
 // Gold
 $("#goldAmt").change(function(){
     var n = $("#goldAmt").val()
-    if (n == 1) {
+    if (n == 0) {
+        $("#goldPic")[0].src = "img/0gold.png";
+    } else if (n == 1) {
         $("#goldPic")[0].src = "img/1gold.png";
     } else if (n == 2) {
         $("#goldPic")[0].src = "img/2gold.png";
