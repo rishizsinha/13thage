@@ -1,0 +1,39 @@
+h1,h2,h3,p,input,table{
+	font-family: fantasy !important;
+}
+
+h1 {
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+p {
+	font-size: 20px;
+}
+
+table {
+	text-align: center;
+}
+
+.centertext {
+	text-align: center;
+}
+
+input{
+	outline:none;
+	/*border:none;*/
+}
+
+.numwidth {
+	width:60px;
+}
+
+.ib {
+	display:inline-block;
+}
+.it {
+	display:inline-table;
+}
