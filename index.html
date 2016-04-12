@@ -35,7 +35,7 @@
 		<input type="text">
 
 		<p style="display:inline-block">Race:</p>
-		<select class="selectpicker">
+		<select class="selectpicker" id="race">
 			<option>Dark Elf</option>
 			<option>Dwarf</option>
 			<option>Gnome</option>
@@ -48,7 +48,7 @@
 		</select>
 
 		<p style="display:inline-block">Class:</p>
-		<select class="selectpicker">
+		<select class="selectpicker" id="classs">
 			<option>Barbarian</option>
 			<option>Bard</option>
 			<option>Cleric</option>
@@ -61,9 +61,7 @@
 		</select>
 
 		<p style="display:inline-block">Level:</p>
-		<button id="leveldown">-</button>
-		<input type="number" id="level" value="1">
-		<button id="levelup">+</button>
+		<input type="number" class="numwidth" id="level" value="1">
 	</div>
 
 	<div class="container content-container center">
@@ -132,6 +130,13 @@
 			</table>
 		</div>
 
+		<div>
+			<h3> Racial Bonus <h3>
+			<div class="btn-group ib" id="raceBonus">
+			  <button type="button" class="btn btn-primary">Apple</button>
+			</div>
+		</div>
+
 	</div>
 
 	<div class="container content-container center">
@@ -141,6 +146,11 @@
 	<div class="container content-container center">
 		<h2> Powers </h2>
 	</div>
+
+	<div class="container content-container center">
+		<h2> Story Log </h2>
+	</div>
+
 
 <script type="text/javascript" src="js/13age.js"></script>
   

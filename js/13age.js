@@ -13,6 +13,14 @@ $('#leveldown').click(function(event){
     $updown.triggerEvents();
 });
 
+// Adjusting Race
+$("#race").change(function(){
+    console.log($("#race").val());
+    $.getJSON( "data/races.json", function(data){
+        console.log(data);
+    });
+});
+
 // Adjusting Stats
 function modCalc(attr){ return Math.floor((parseInt($("#"+attr).val()) - 10)/2); }
 function adjustAC(){

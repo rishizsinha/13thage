@@ -1,0 +1,68 @@
+{
+	"Human":{
+		"bonus": [
+			"str",
+			"con",
+			"dex",
+			"int",
+			"wis",
+			"cha"
+		]
+	},
+
+	"Dwarf":{
+		"bonus":[
+			"con",
+			"wis"
+		]
+	},
+
+	"Dark Elf":{
+		"bonus":[
+			"dex",
+			"cha"
+		]
+	},
+
+	"High Elf":{
+		"bonus":[
+			"int",
+			"cha"
+		]
+	},
+
+	"Wood Elf":{
+		"bonus":[
+			"dex",
+			"wis"
+		]
+	},
+
+	"Half-Elf":{
+		"bonus":[
+			"con",
+			"cha"
+		]
+	},
+
+	"Halfling":{
+		"bonus":[
+			"dex",
+			"con"
+		]
+	},
+
+	"Half-Orc":{
+		"bonus":[
+			"dex",
+			"str"
+		]
+	},
+
+	"Gnome":{
+		"bonus":[
+			"dex",
+			"int"
+		]
+	},
+}
