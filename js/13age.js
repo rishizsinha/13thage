@@ -77,9 +77,49 @@ $("#cha").change(function(){
     $("#chamod").html(newmod);
     $("#chamodlvl").html(newmod+parseInt($("#level").val()));
     adjustMD();
-})
+});
+
+// Gold
+$("#goldAmt").change(function(){
+    var n = $("#goldAmt").val()
+    if (n == 1) {
+        $("#goldPic")[0].src = "img/1gold.png";
+    } else if (n == 2) {
+        $("#goldPic")[0].src = "img/2gold.png";
+    } else if (n == 3) {
+        $("#goldPic")[0].src = "img/3gold.png";
+    } else if (n == 4) {
+        $("#goldPic")[0].src = "img/4gold.png";
+    } else if (n < 25) {
+        $("#goldPic")[0].src = "img/5gold.png";
+    } else if (n < 100) {
+        $("#goldPic")[0].src = "img/25gold.png";
+    } else if (n < 250) {
+        $("#goldPic")[0].src = "img/100gold.png";
+    } else if (n < 500) {
+        $("#goldPic")[0].src = "img/250gold.png";
+    } else if (n < 1000) {
+        $("#goldPic")[0].src = "img/1kgold.png";
+    } else if (n >= 1000) {
+        $("#goldPic")[0].src = "img/10kgold.png";
+    }
+});
 
 // Add Item
 $("#addItem").click(function(){
     $(this).before("<input type='text'><br>")
 })
+
+// Logging
+$("#enterLog").click(function(){
+    var s = $("#newEntry").val().split("\n").join("<br />");
+    console.log(s);
+    $("#logHistory").prepend("<div style='border-style:double; margin-top:10px; margin-bottom:10px'><p>"+s+"</p></div>");
+    $("#newEntry").val("");
+})
+// $("#newEntry").keyup(function(event){
+//     if(event.keyCode == 13 && $.trim($("#newEntry").val()).length>0){
+//         $("#enterLog").click();
+//     }
+// });
+

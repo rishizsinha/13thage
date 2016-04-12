@@ -141,7 +141,14 @@
 
 	<div class="container content-container center">
 		<h2> Inventory </h2>
-		<button type="button" class="btn" id="addItem">Add Item</button>
+		<div>
+			<h3 class="ib"> Gold Pieces: </h3>
+			<input type="number" style="width:70px" id="goldAmt" min="0">
+			<img src="img/1gold.png" id="goldPic" width="50px" height="50px">
+		</div>
+		<div>
+			<button type="button" class="btn" id="addItem">Add Item</button>
+		</div>
 	</div>
 
 	<div class="container content-container center">
@@ -150,6 +157,17 @@
 
 	<div class="container content-container center">
 		<h2> Story Log </h2>
+		<div class="form-horizontal">
+	    <div class="form-group">
+	      <div class="col-md-6">
+	        <textarea class="form-control" rows="3" placeholder="Write about your journey!" required id="newEntry"></textarea>
+	      </div>
+	    </div>
+		</div>
+		<button type="button" class="btn" id="enterLog" style="margin-bottom:15px">Enter</button>
+		<div style="overflow:scroll; height:250px" id="logHistory">
+
+		</div>
 	</div>
 
 
