@@ -1,17 +1,3 @@
-var $controlledByButtons = $('#level');
-$controlledByButtons.updown({
-    step: 1,
-    shiftStep: 100
-});
-var $updown = $controlledByButtons.data('updown');
-$('#levelup').click(function(event){
-    $updown.increase(event);
-    $updown.triggerEvents();
-});
-$('#leveldown').click(function(event){
-    $updown.decrease(event);
-    $updown.triggerEvents();
-});
 
 // Adjusting Race
 $("#race").change(function(){
@@ -19,12 +5,18 @@ $("#race").change(function(){
     $("#raceBonus").html("");
     $.getJSON("http://rishizsinha.github.io/13thage/data/races.json?callback=")
         .done(function(data){
-            console.log("hey");
-            console.log(data);
-        })
-        .fail(function(d, textStatus, error) {
-            console.error("getJSON failed, status: " + textStatus + ", error: "+error);
+            var r = $.grep(data, function(e){return e.race==$("#race").val();})[0];
+            for (var i in r.bonus) {
+                $("#raceBonus").append("<button type='button' class='btn btn-secondary'>"+
+                    r.bonus[i].toUpperCase()+"</button>");
+            }
         });
+    console.log("ok");
+    $("#raceBonus").on("click", "button", (function(){
+        $(this).removeClass("btn-secondary").addClass("btn-success");
+        $("#raceBonus button").not(this).removeClass("btn-success")
+            .removeClass("btn-secondary").addClass("btn-secondary");
+    }));
 });
 
 // Adjusting Stats
@@ -85,4 +77,9 @@ $("#cha").change(function(){
     $("#chamod").html(newmod);
     $("#chamodlvl").html(newmod+parseInt($("#level").val()));
     adjustMD();
+})
+
+// Add Item
+$("#addItem").click(function(){
+    $(this).before("<input type='text'><br>")
 })
