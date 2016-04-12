@@ -16,11 +16,15 @@ $('#leveldown').click(function(event){
 // Adjusting Race
 $("#race").change(function(){
     console.log($("#race").val());
-
-    $.getJSON( "http://rishizsinha.github.io/13thage/data/races.json", function(data){
-        console.log("hey");
-        console.log(data);
-    });
+    $("#raceBonus").html("");
+    $.getJSON("http://rishizsinha.github.io/13thage/data/races.json?callback=")
+        .done(function(data){
+            console.log("hey");
+            console.log(data);
+        })
+        .fail(function(d, textStatus, error) {
+            console.error("getJSON failed, status: " + textStatus + ", error: "+error);
+        });
 });
 
 // Adjusting Stats

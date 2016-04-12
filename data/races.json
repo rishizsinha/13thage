@@ -1,5 +1,6 @@
-{
-	"Human":{
+[
+	{
+		"race": "Human",
 		"bonus": [
 			"str",
 			"con",
@@ -10,59 +11,67 @@
 		]
 	},
 
-	"Dwarf":{
+	{
+		"race": "Dwarf",
 		"bonus":[
 			"con",
 			"wis"
 		]
 	},
 
-	"Dark Elf":{
+	{
+		"race": "Dark Elf",
 		"bonus":[
 			"dex",
 			"cha"
 		]
 	},
 
-	"High Elf":{
+	{
+		"race": "High Elf",
 		"bonus":[
 			"int",
 			"cha"
 		]
 	},
 
-	"Wood Elf":{
+	{
+		"race": "Wood Elf",
 		"bonus":[
 			"dex",
 			"wis"
 		]
 	},
 
-	"Half-Elf":{
+	{
+		"race": "Half-Elf",
 		"bonus":[
 			"con",
 			"cha"
 		]
 	},
 
-	"Halfling":{
+	{
+		"race": "Halfling",
 		"bonus":[
 			"dex",
 			"con"
 		]
 	},
 
-	"Half-Orc":{
+	{
+		"race": "Half-Orc",
 		"bonus":[
 			"dex",
 			"str"
 		]
 	},
 
-	"Gnome":{
+	{
+		"race": "Gnome",
 		"bonus":[
 			"dex",
 			"int"
 		]
-	},
-}
+	}
+]
