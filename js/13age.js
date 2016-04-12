@@ -16,7 +16,9 @@ $('#leveldown').click(function(event){
 // Adjusting Race
 $("#race").change(function(){
     console.log($("#race").val());
-    $.getJSON( "data/races.json", function(data){
+
+    $.getJSON( "http://rishizsinha.github.io/13thage/data/races.json", function(data){
+        console.log("hey");
         console.log(data);
     });
 });
