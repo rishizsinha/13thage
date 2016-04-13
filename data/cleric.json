@@ -3,8 +3,8 @@
 		
 	],
 	"ac_none": 10,
-	"ac_light": 14,
-	"ac_heavy": 15,
+	"ac_light": 12,
+	"ac_heavy": 14,
 	"ac_shield": 1,
 	"melee": {
 
@@ -14,10 +14,9 @@
 	},
 	"recovery_die": "1d8",
 	"base_pd": 11,
-	"base_md": 10,
+	"base_md": 11,
 	"class_bonus": [
 		"str",
-		"dex",
 		"wis"
 	],
 	"base_hp":7

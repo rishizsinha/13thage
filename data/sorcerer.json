@@ -64,9 +64,10 @@
 			"ef":"If you put out one of your eyes and cut off one of your hands, you gain a +1 bonus to all attacks."
 		}
 	],
-	"armor": {
-
-	},
+	"ac_none": 10,
+	"ac_light": 10,
+	"ac_heavy": 11,
+	"ac_shield": 1,
 	"melee": {
 
 	},

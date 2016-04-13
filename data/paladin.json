@@ -1,0 +1,23 @@
+{
+	"class_talents": [
+		
+	],
+	"ac_none": 10,
+	"ac_light": 12,
+	"ac_heavy": 16,
+	"ac_shield": 1,
+	"melee": {
+
+	},
+	"ranged": {
+
+	},
+	"recovery_die": "1d10",
+	"base_pd": 10,
+	"base_md": 11,
+	"class_bonus": [
+		"cha",
+		"str"
+	],
+	"base_hp":8
+}
