@@ -1,0 +1,84 @@
+{
+	"class_talents": [
+		{
+			"ability": "Arcane Heritage",
+			"text": "Although magic is in the blood of every sorcerer, you have a greater understanding of magic than most sorcerers and even some wizards.You gain a +2 bonus to a background that involves or suggests magical knowledgeor talent, up to your normal maximum background point limit.You can also use one of your sorcerer spell choices to choose any wizard spell of the same level. You get only one such equal-level wizard spell at a time; all others have to be purchased using the 2-level penalty in the Access to Wizardry class feature described above.",
+			"af": "Use your Charisma as the attack ability for the wizard spell you choose with your Arcane Heritage talent.",
+			"cf": "You can cast your wizard spells empowered as if they were sorcerer powers. Generally, empowering wizard spells only helps by doubling the damage.",
+			"ef":""
+		},
+		{
+			"ability": "Blood Link",
+			"text": "Choose one of your sorcerous heritage talents. You gain 1 relationship point with the icon associated with that heritage; you choose whether the point is positive, conflicted, or negative. This point can add to your normal relationship points but you can't exceed the normal relationship maximums with it. (Remember that positive relationships with villainous icons are limited to 1 point.)",
+			"af": "",
+			"cf":"Gain another relationship point with an icon associated with one of your heritage talents. As above, you must follow the relationship maximums.",
+			"ef":""
+		},
+		{
+			"ability": "Chromatic Destroyer Heritage",
+			"text": "You can have multiple breath weapon spells active at the same time. You don't gain extra actions, so if you succeed with multiple breath weapon spells, you'll generally have to choose which one to use.",
+			"af":"Adventurer Feat You gain a +2 attack bonus with empowered breath weapon spells.",
+			"cf":"Once per day, turn a failed breath weapon re-use roll into a success.",
+			"ef":"One battle per day, gain resist dragon attack 16+ (all attacks made by dragons; dragon must roll natural 16+ with the attack or it deals only half damage)."
+		},
+		{
+			"ability": "Fey Heritage",
+			"text": "One battle per day, when you roll initiative, you can choose to invoke your Fey Heritage and gain the racial power of one the elven races in addition to your own racial power. Roll on the table below. If you roll your own race's power, you gain the half-elf's surprising racial power instead.",
+			"af":"You can now invoke your Fey Heritage talent in two battles each day.",
+			"cf":"You gain a +2 attack bonus against elves and monsters in the elven sphere of influence (including the Drider, Storm Giant, and Medusa).",
+			"ef":"Once per battle when the escalation die reaches 6+, as a free action, you can gain an elf racial power that you have not already used in this battle."
+		},
+		{
+			"ability": "Infernal Heritage",
+			"text": "Once per day, as a quick action when the escalation die is 1+, you can enter a spell frenzy until the end of the battle. While in a spell frenzy, you roll 2d20 for each of your sorcerer spell attacks. Use the highest die as your attack roll, but track whether the other die hits. For each die that misses, you take damage equal to double the level of the target of your attack.",
+			"af":"You gain resist energy damage 12+ to fire and to one of the following types of energy of your choice: acid, cold, lightning, psychic, thunder.",
+			"cf":"Increase one of your resistances to 16+.",
+			"ef":"In addition to your normal use of spell frenzy, you can also enter a spell frenzy as a free action while the escalation die is 5+."
+		},
+		{
+			"ability": "Metallic Protector Heritage",
+			"text": "Your rolls to re-use breath weapon spells during a fight gain a +2 bonus.",
+			"af":"As a quick action at the start of each battle, you can gain resist energy 12+ to one of the following types of energy of your choice: acid, cold, fire, lightning, or poison.",
+			"cf":"When you gather power and your chaotic benefit increases your defenses, you can choose one nearby ally to gain the same defense bonus.",
+			"ef":"One battle per day, you can choose to gain resist demon attack 16+ instead of resist energy 12+ from your Metallic Protector Heritage talent."
+		},
+		{
+			"ability": "Sorceror's Familiar",
+			"text": "You have a familiar much like a wizard's familiar, but more changeable. Unlike the wizard, you don't choose two abilities for your familiar. Instead you choose one permanent ability that suits your familiar's nature; the only limitation is that you can't choose tough as the permanent ability. Each time you get a full heal-up, randomly determine two other abilities your familiar will possess until your next full heal-up.",
+			"af":"Your familiar gains another randomly changing ability.",
+			"cf":"Once per level, if your familiar is close to you, it can cast one of your spells as a free action on your initiative count, even if you have already expended the spell. The spell functions as if you had cast it.",
+			"ef":"Your familiar gains another randomly changing ability."
+		},
+		{
+			"ability": "Spell Fist",
+			"text": "Your style of sorcery emphasizes close-range fighting. There are two advantages and one possible drawback to your style. You gain a +2 bonus to AC.You can use ranged spells while engaged with enemies without taking opportunity attacks. You use your Constitution modifier instead of your Charisma modifier to determine the damage you add to all your sorcerer spells.",
+			"af":"When you miss with a sorcerer spell against an enemy you are engaged with, add your Charisma modifier to the damage you deal. At 5th level, add double your Charisma modifier; at 8th level, triple it.",
+			"cf":"Once per battle, you can include one enemy engaged with you as an additional target of any attack spell you cast that targets other enemies.",
+			"ef":"Once per day when you cast an empowered spell, each enemy engaged with you becomes an additional target of that spell if it's not already targeted by the spell."
+		},
+		{
+			"ability": "Undead Remnant Heritage",
+			"text": "You have resist negative energy 12+ and gain a +1 attack bonus against undead. You can also include negative energy damage on your personal random energy damage type table, swapping out an energy type you don't want to access randomly.",
+			"af":"Decrease your total recoveries by 1; you gain a +2 bonus to death saves.",
+			"cf":"Your resist negative energy power improves to 16+, and the attack bonus against undead increases to +2.",
+			"ef":"If you put out one of your eyes and cut off one of your hands, you gain a +1 bonus to all attacks."
+		}
+	],
+	"armor": {
+
+	},
+	"melee": {
+
+	},
+	"ranged": {
+
+	},
+	"recovery_die": "",
+	"base_pd": 11,
+	"base_md": 10,
+	"class_bonus": [
+		"cha",
+		"con"
+	],
+	"base_hp":6
+}
