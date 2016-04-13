@@ -28,7 +28,8 @@
 	<div class="container content-container center" style="margin-top:35px; margin-bottom:20px">
 			<h1> 13th Age Character Tracker </h1>
 	</div>
-	
+
+	<!-- KEY ATTRIBUTES -->
 	<div class="container content-container center">
 		<h2> Character Attributes </h2>
 		<p style="display:inline-block">Name:</p>
@@ -64,9 +65,10 @@
 		<input type="number" class="numwidth" id="level" value="1" min="1" max="10">
 	</div>
 
+<!-- STATS -->
 	<div class="container content-container center">
 		<div class="ib">
-			<table border="1" class="ib">
+			<table border="1" class="ib centertext">
 				<tr>
 					<td>Attr:</td>
 					<td>STR</td>
@@ -110,16 +112,20 @@
 			<table>
 				<tr>
 					<td>
-						<p class="it"> Defense&nbsp;</p>
-						<p class="it" id="ac"> AC: -1 </p>
-						<p class="it" id="pd">&nbsp;PD: -1 </p>
-						<p class="it" id="md">&nbsp;MD: -1 </p>
+						<p class="ib"> Defense</p>&nbsp;&nbsp;
+						<table class="ib def" border="1">
+							<tr>
+								<td id="ac">&nbsp;AC: -1&nbsp;</td>
+								<td id="pd">&nbsp;PD: -1&nbsp;</td>
+								<td id="md">&nbsp;MD: -1&nbsp;</td>
+							</tr>
+						</table>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<p style="display:inline-table">HP:</p>
-						<input class="center numwidth" type="number" id="str" value="8"> /
+						<input class="center numwidth" type="number" id="curhp" value="8"> /
 						<p class="ib" id="maxhp">8</p>&nbsp;&nbsp;
 
 						<p style="display:inline-table">Recoveries:</p>
@@ -134,11 +140,22 @@
 			<h3 class="ib"> Racial Bonus </h3>&nbsp;&nbsp;
 			<div class="btn-group ib" id="raceBonus">
 			  <button type="button" class="btn btn-secondary">???</button>
-			</div>
+			</div>&nbsp;&nbsp;&nbsp;&nbsp;
+			<h3 class="ib"> Class Bonus </h3>&nbsp;&nbsp;
+			<div class="btn-group ib" id="classBonus">
+			  <button type="button" class="btn btn-secondary">???</button>
+			</div>&nbsp;&nbsp;&nbsp;&nbsp;
+			<h3 class="ib">Armor Type</h3>
+			<select class="selectpicker" id="classs">
+				<option>None</option>
+				<option>Light</option>
+				<option>Heavy</option>
+			</select>
 		</div>
 
 	</div>
 
+<!-- INVENTORY -->
 	<div class="container content-container center">
 		<h2> Inventory </h2>
 		<div>
@@ -147,10 +164,13 @@
 			<img src="img/1gold.png" id="goldPic" width="50px" height="50px">
 		</div>
 		<div>
+			<div class="row" id="inventoryspace">
+			</div>
 			<button type="button" class="btn" id="addItem">Add Item</button>
 		</div>
 	</div>
 
+<!-- POWERS -->
 	<div class="container content-container center">
 		<h2> Powers </h2>
 		<ul class="nav nav-tabs">
@@ -162,6 +182,7 @@
 		</div>
 	</div>
 
+<!-- STORY LOG -->
 	<div class="container content-container center">
 		<h2> Story Log </h2>
 		<div class="form-horizontal">
@@ -179,6 +200,13 @@
 
 
 <script type="text/javascript" src="js/13age.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#race").change();
+		$("#classs").change();
+		$("#level").change();
+	});
+</script>
   
 </body>
 </html>

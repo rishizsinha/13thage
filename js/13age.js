@@ -20,15 +20,28 @@ $("#race").change(function(){
 });
 
 // Adjusting Class
+
 $("#classs").change(function(){
     console.log($("#classs").val());
     $.getJSON("http://rishizsinha.github.io/13thage/data/"+$("#classs").val().toLowerCase()+".json?callback=")
         .done(function(data){
-            var hpbase = data["base_hp"];
-            var acbase = data["base_ac"];
-            var pdbase = data["base_pd"];
-            var mdbase = data["base_md"];
-        })
+            console.log(data["base_hp"]);
+            hpbase = parseInt(data["base_hp"]);
+            acbase = parseInt(data["ac_light"]);
+            pdbase = parseInt(data["base_pd"]);
+            mdbase = parseInt(data["base_md"]);
+            $("#level").change();
+            $("#classBonus").html("");
+            for (var i in data["class_bonus"]) {
+                $("#classBonus").append("<button type='button' class='btn btn-secondary'>"+
+                    data["class_bonus"][i].toUpperCase()+"</button>");
+            }
+        });
+    $("#classBonus").on("click", "button", (function(){
+        $(this).removeClass("btn-secondary").addClass("btn-success");
+        $("#classBonus button").not(this).removeClass("btn-success")
+            .removeClass("btn-secondary").addClass("btn-secondary");
+    }));
     // if ($("#classs").val() == "Sorcerer") {
     //     $.getJSON("http://rishizsinha.github.io/13thage/data/sorcerer.json?callback=")
     //         .done()
@@ -41,23 +54,31 @@ function adjustAC(){
     var c = parseInt($("#conmod").html());
     var d = parseInt($("#dexmod").html());
     var w = parseInt($("#wismod").html());
-    $("#ac").html("AC: "+(acbase+$("#level").val()+c+d+w-Math.max(c,d,w)-Math.min(c,d,w)).toString())
+    var l = parseInt($("#level").val());
+    $("#ac").html("&nbsp;AC: "+(acbase+l+c+d+w-Math.max(c,d,w)-Math.min(c,d,w)).toString()+"&nbsp;")
 }
 function adjustPD(){
     var c = parseInt($("#conmod").html());
     var d = parseInt($("#dexmod").html());
     var s = parseInt($("#strmod").html());
-    $("#pd").html("&nbsp;PD: "+(pdbase+$("#level").val()+c+d+s-Math.max(c,d,s)-Math.min(c,d,s)).toString())
+    var l = parseInt($("#level").val());
+    $("#pd").html("&nbsp;PD: "+(pdbase+l+c+d+s-Math.max(c,d,s)-Math.min(c,d,s)).toString()+"&nbsp;")
 }
 function adjustMD(){
     var i = parseInt($("#intmod").html());
     var c = parseInt($("#chamod").html());
     var w = parseInt($("#wismod").html());
-    $("#md").html("&nbsp;MD: "+(mdbase+$("#level").val()+c+i+w-Math.max(c,i,w)-Math.min(c,i,w)).toString())
+    var l = parseInt($("#level").val());
+    $("#md").html("&nbsp;MD: "+(mdbase+l+c+i+w-Math.max(c,i,w)-Math.min(c,i,w)).toString()+"&nbsp;")
 }
 var hpmultipliers = [0, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24]
-function adjustMaxHP(mod){
-    $("#maxhp").html((hpbase+mod)*hpmultipliers[$("#level").val()]);
+function adjustMaxHP(){
+    var diff = parseInt($("#maxhp").html())-parseInt($("#curhp").val());
+    var mult = hpmultipliers[parseInt($("#level").val())]
+    var mod = parseInt($("#conmod").html());
+    var total = (hpbase+mod)*mult;
+    $("#maxhp").html(total);
+    $("#curhp").val(total-diff);
 }
 $("#str").change(function(){
     var newmod = modCalc("str");
@@ -71,6 +92,7 @@ $("#con").change(function(){
     $("#conmodlvl").html(newmod+parseInt($("#level").val()));
     adjustAC();
     adjustPD();
+    adjustMaxHP();
 })
 $("#dex").change(function(){
     var newmod = modCalc("dex");
@@ -105,7 +127,7 @@ $("#level").change(function(){
     $("#wis").change();
     $("#con").change();
     $("#str").change();
-    adjustMaxHP(6, parseInt($("#chamod").html()));
+    adjustMaxHP();
 });
 
 // Gold
@@ -137,9 +159,16 @@ $("#goldAmt").change(function(){
 });
 
 // Add Item
+var itemcount = 0
 $("#addItem").click(function(){
-    $(this).before("<input type='text'><br>")
-})
+    $("#inventoryspace").prepend("<div class='col-md-4' id='item"+itemcount+"' style='margin-bottom:10px'><div class='input-group'><input type='text' class='form-control'><span class='input-group-btn'><button type='button' class='btn btn-default' id='item"+itemcount+"Remove'>x</button></span></div></div>");
+    itemcount += 1;    
+});
+$
+$("#inventoryspace").on("click", "button", function(){
+    var id = $(event.target)[0].id.replace("Remove","");
+    $("#"+id).remove();
+});
 
 
 // Logging

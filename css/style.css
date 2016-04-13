@@ -10,12 +10,8 @@ h1 {
 	line-height: 26.4px;
 }
 
-p {
+p, .def {
 	font-size: 20px;
-}
-
-table {
-	text-align: center;
 }
 
 .centertext {
@@ -38,7 +34,9 @@ input{
 	display:inline-table;
 }
 
-.circle {
+.featmark {
 	border-radius: 50%;
-	
+	width:18px;
+	height:18px;
+
 }
