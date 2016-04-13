@@ -1,0 +1,23 @@
+{
+	"class_talents": [
+		
+	],
+	"armor": {
+
+	},
+	"melee": {
+
+	},
+	"ranged": {
+
+	},
+	"recovery_die": "1d8",
+	"base_pd": 11,
+	"base_md": 10,
+	"class_bonus": [
+		"str",
+		"dex",
+		"wis"
+	],
+	"base_hp":7
+}

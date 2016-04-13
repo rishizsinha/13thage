@@ -61,7 +61,7 @@
 		</select>
 
 		<p style="display:inline-block">Level:</p>
-		<input type="number" class="numwidth" id="level" value="1">
+		<input type="number" class="numwidth" id="level" value="1" min="1" max="10">
 	</div>
 
 	<div class="container content-container center">
@@ -120,7 +120,7 @@
 					<td>
 						<p style="display:inline-table">HP:</p>
 						<input class="center numwidth" type="number" id="str" value="8"> /
-						<input class="center numwidth" type="number" id="str" value="8">
+						<p class="ib" id="maxhp">8</p>&nbsp;&nbsp;
 
 						<p style="display:inline-table">Recoveries:</p>
 						<input class="center numwidth" type="number" id="str" value="8"> /
@@ -153,6 +153,13 @@
 
 	<div class="container content-container center">
 		<h2> Powers </h2>
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#classinfo">Class Powers</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="classinfo" class="tab-pane fade in active">
+			</div>
+		</div>
 	</div>
 
 	<div class="container content-container center">

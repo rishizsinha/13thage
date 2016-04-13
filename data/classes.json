@@ -1,0 +1,110 @@
+{
+	"Sorceror":{
+		"class_talents": [
+			{
+				"ability": "Arcane Heritage",
+				"text": "Although magic is in the blood of every sorcerer, you have a 
+				greater understanding of magic than most sorcerers and even some wizards.
+				You gain a +2 bonus to a background that involves or suggests magical knowledge
+				or talent, up to your normal maximum background point limit.
+				You can also use one of your sorcerer spell choices to choose any wizard spell 
+				of the same level. You get only one such equal-level wizard spell at a time; 
+				all others have to be purchased using the 2-level penalty in the Access to 
+				Wizardry class feature described above.",
+				"af": "Use your Charisma as the attack ability for the wizard spell you choose 
+				with your Arcane Heritage talent.",
+				"cf": "You can cast your wizard spells empowered as if they were sorcerer 
+				powers. Generally, empowering wizard spells only helps by doubling the damage.",
+				"ef":""
+			},
+			{
+				"ability": "Blood Link",
+				"text": "Choose one of your sorcerous heritage talents. You gain 1 
+				relationship point with the icon associated with that heritage; you choose 
+				whether the point is positive, conflicted, or negative. This point can add to 
+				your normal relationship points but you can't exceed the normal relationship 
+				maximums with it. (Remember that positive relationships with villainous icons 
+				are limited to 1 point.)",
+				"af": "",
+				"cf":"Gain another relationship point with an icon associated with one of your 
+				heritage talents. As above, you must follow the relationship maximums.",
+				"ef":""
+			},
+			{
+				"ability": "Chromatic Destroyer Heritage",
+				"text": "You can have multiple breath weapon spells active at the same time. 
+				You don't gain extra actions, so if you succeed with multiple breath weapon 
+				spells, you'll generally have to choose which one to use.",
+				"af":"Adventurer Feat You gain a +2 attack bonus with empowered breath weapon spells.",
+				"cf":"Once per day, turn a failed breath weapon re-use roll into a success.",
+				"ef":"One battle per day, gain resist dragon attack 16+ (all attacks made by dragons;
+				dragon must roll natural 16+ with the attack or it deals only half damage)."
+			}
+		],
+		"armor": {
+
+		},
+		"melee": {
+
+		},
+		"ranged": {
+
+		},
+		"recovery_die": "",
+		"base_pd": 11,
+		"base_md": 10,
+		"class_bonus": [
+			"cha",
+			"con"
+		],
+		"base_hp":6
+	},
+
+	"Wizard":{
+		"class_talents": [
+
+		]
+	},
+
+	"Rogue":{
+		"class_talents": [
+
+		]
+	},
+
+	"Ranger":{
+		"class_talents": [
+
+		]
+	},
+
+	"Paladin":{
+		"class_talents": [
+
+		]
+	},
+
+	"Fighter":{
+		"class_talents": [
+
+		]
+	},
+
+	"Cleric":{
+		"class_talents": [
+
+		]
+	},
+
+	"Bard":{
+		"class_talents": [
+
+		]
+	},
+
+	"Barbarian":{
+		"class_talents": [
+
+		]
+	},
+}

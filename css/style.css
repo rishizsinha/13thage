@@ -37,3 +37,8 @@ input{
 .it {
 	display:inline-table;
 }
+
+.circle {
+	border-radius: 50%;
+	
+}

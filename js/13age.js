@@ -19,25 +19,45 @@ $("#race").change(function(){
     }));
 });
 
+// Adjusting Class
+$("#classs").change(function(){
+    console.log($("#classs").val());
+    $.getJSON("http://rishizsinha.github.io/13thage/data/"+$("#classs").val().toLowerCase()+".json?callback=")
+        .done(function(data){
+            var hpbase = data["base_hp"];
+            var acbase = data["base_ac"];
+            var pdbase = data["base_pd"];
+            var mdbase = data["base_md"];
+        })
+    // if ($("#classs").val() == "Sorcerer") {
+    //     $.getJSON("http://rishizsinha.github.io/13thage/data/sorcerer.json?callback=")
+    //         .done()
+    // }
+});
+
 // Adjusting Stats
 function modCalc(attr){ return Math.floor((parseInt($("#"+attr).val()) - 10)/2); }
 function adjustAC(){
     var c = parseInt($("#conmod").html());
     var d = parseInt($("#dexmod").html());
     var w = parseInt($("#wismod").html());
-    $("#ac").html("AC: "+(c+d+w-Math.max(c,d,w)-Math.min(c,d,w)).toString())
+    $("#ac").html("AC: "+(acbase+$("#level").val()+c+d+w-Math.max(c,d,w)-Math.min(c,d,w)).toString())
 }
 function adjustPD(){
     var c = parseInt($("#conmod").html());
     var d = parseInt($("#dexmod").html());
     var s = parseInt($("#strmod").html());
-    $("#pd").html("&nbsp;PD: "+(c+d+s-Math.max(c,d,s)-Math.min(c,d,s)).toString())
+    $("#pd").html("&nbsp;PD: "+(pdbase+$("#level").val()+c+d+s-Math.max(c,d,s)-Math.min(c,d,s)).toString())
 }
 function adjustMD(){
     var i = parseInt($("#intmod").html());
     var c = parseInt($("#chamod").html());
     var w = parseInt($("#wismod").html());
-    $("#md").html("&nbsp;MD: "+(c+i+w-Math.max(c,i,w)-Math.min(c,i,w)).toString())
+    $("#md").html("&nbsp;MD: "+(mdbase+$("#level").val()+c+i+w-Math.max(c,i,w)-Math.min(c,i,w)).toString())
+}
+var hpmultipliers = [0, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24]
+function adjustMaxHP(mod){
+    $("#maxhp").html((hpbase+mod)*hpmultipliers[$("#level").val()]);
 }
 $("#str").change(function(){
     var newmod = modCalc("str");
@@ -78,6 +98,15 @@ $("#cha").change(function(){
     $("#chamodlvl").html(newmod+parseInt($("#level").val()));
     adjustMD();
 });
+$("#level").change(function(){
+    $("#dex").change();
+    $("#cha").change();
+    $("#int").change();
+    $("#wis").change();
+    $("#con").change();
+    $("#str").change();
+    adjustMaxHP(6, parseInt($("#chamod").html()));
+});
 
 // Gold
 $("#goldAmt").change(function(){
@@ -111,6 +140,7 @@ $("#goldAmt").change(function(){
 $("#addItem").click(function(){
     $(this).before("<input type='text'><br>")
 })
+
 
 // Logging
 $("#enterLog").click(function(){
