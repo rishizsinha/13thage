@@ -30,6 +30,7 @@ $("#classs").change(function(){
             acbase = parseInt(data["ac_light"]);
             pdbase = parseInt(data["base_pd"]);
             mdbase = parseInt(data["base_md"]);
+            rdie = data["recovery_die"]
             $("#level").change();
             $("#classBonus").html("");
             for (var i in data["class_bonus"]) {
@@ -80,6 +81,11 @@ function adjustMaxHP(){
     $("#maxhp").html(total);
     $("#curhp").val(total-diff);
 }
+function adjustRecovery(){
+    var l = $("#level").val();
+    var c = $("#conmod").html()
+    $("#recoverydie").html("("+rdie+"x"+l+" + "+c+")")
+}
 $("#str").change(function(){
     var newmod = modCalc("str");
     $("#strmod").html(newmod);
@@ -93,6 +99,7 @@ $("#con").change(function(){
     adjustAC();
     adjustPD();
     adjustMaxHP();
+    adjustRecovery();
 })
 $("#dex").change(function(){
     var newmod = modCalc("dex");
