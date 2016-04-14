@@ -242,5 +242,24 @@ function saveTextAsFile() {
 }
 $("#saveButton").click(function(){
     saveTextAsFile();
-})
+});
+
+//Loading
+function loadFileAsText()
+{
+    var fileToLoad = $("#fileToLoad").files[0];
+
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var mychar = JSON.parse(fileLoadedEvent.target.result);
+        console.log(mychar);
+        // $("#inputTextToSave").value = textFromFileLoaded;
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+}
+$("#loadButton").click(function(){
+    loadFileAsText();
+});
+
 

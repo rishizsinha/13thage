@@ -69,12 +69,12 @@
 	"ac_heavy": 11,
 	"ac_shield": 1,
 	"melee": {
-		
+
 	},
 	"ranged": {
 
 	},
-	"recovery_die": "",
+	"recovery_die": "1d6",
 	"base_pd": 11,
 	"base_md": 10,
 	"class_bonus": [
