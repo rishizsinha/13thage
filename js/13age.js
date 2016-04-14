@@ -196,7 +196,7 @@ function saveTextAsFile() {
     var mychar = {
         "name":$("#name").val(),
         "race":$("#race").val(),
-        "class":$("#classs").val(),
+        "classs":$("#classs").val(),
         "level":$("#level").val(),
         "cha":$("#cha").val(),
         "dex":$("#dex").val(),
@@ -245,21 +245,44 @@ $("#saveButton").click(function(){
 });
 
 //Loading
-function loadFileAsText()
+function loadFile()
 {
-    var fileToLoad = $("#fileToLoad").files[0];
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
 
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent) 
     {
         var mychar = JSON.parse(fileLoadedEvent.target.result);
         console.log(mychar);
-        // $("#inputTextToSave").value = textFromFileLoaded;
+        $("#name").val(mychar["name"]);
+        $("#race").val(mychar["race"]);
+        $("#classs").val(mychar["classs"]);
+        console.log($("#classs").val());
+        $("#cha").val(mychar["cha"]);
+        $("#dex").val(mychar["dex"]);
+        $("#int").val(mychar["int"]);
+        $("#wis").val(mychar["wis"]);
+        $("#str").val(mychar["str"]);
+        $("#con").val(mychar["con"]);
+        $("#goldAmt").val(mychar["gp"]);
+        $("#curhp").val(mychar["curhp"]);
+        $("#currecoveries").val(mychar["currecoveries"]);
+        $("#maxrecoveries").val(mychar["maxrecoveries"]);
+        $("#level").change();
+        $("#race").change();
+        $("#classs").change();
+        console.log("K");
+        var story = mychar["story"].reverse();
+        for (var i in story) {
+            console.log(story[i])
+            $("#logHistory").prepend("<div style='border-style:double; margin-top:10px; margin-bottom:10px'><p>"+story[i]+"</p></div>");
+        }
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
 }
 $("#loadButton").click(function(){
-    loadFileAsText();
+    console.log("Click");
+    loadFile();
 });
 
 
