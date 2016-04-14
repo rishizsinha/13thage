@@ -177,13 +177,18 @@ $("#inventoryspace").on("click", "button", function(){
     $("#"+id).remove();
 });
 
-
 // Logging
 $("#enterLog").click(function(){
-    var s = $("#newEntry").val().split("\n").join("<br />");
-    console.log(s);
-    $("#logHistory").prepend("<div style='border-style:double; margin-top:10px; margin-bottom:10px'><p>"+s+"</p></div>");
-    $("#newEntry").val("");
+    if ($.trim($("#newEntry").val()).length>0){
+        var s = $("#newEntry").val().split("\n").join("<br/>");
+        console.log(s);
+        $("#logHistory").append("<div style='border-style:double; margin-top:10px; margin-bottom:10px'><p>"+s+"</p></div>");
+        $("#newEntry").val("");
+        // $("#logHistory").scrollTop($("#logHistory")[0].scrollHeight);
+        $('#logHistory').stop().animate({
+          scrollTop: $('#logHistory')[0].scrollHeight
+        }, 800);
+    }
 })
 // $("#newEntry").keyup(function(event){
 //     if(event.keyCode == 13 && $.trim($("#newEntry").val()).length>0){
@@ -192,7 +197,7 @@ $("#enterLog").click(function(){
 // });
 
 // Saving
-function saveTextAsFile() {
+function saveCharacter() {
     var mychar = {
         "name":$("#name").val(),
         "race":$("#race").val(),
@@ -241,7 +246,47 @@ function saveTextAsFile() {
     downloadLink.click();
 }
 $("#saveButton").click(function(){
-    saveTextAsFile();
+    saveCharacter();
+});
+
+function saveStory() {
+    var story = ""
+    $("#logHistory").find("p").each(function(){
+        story = story.concat($(this).html()+"\n---\n")
+    })
+    console.log(story);
+    var textToWrite = story;
+    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    var fileNameToSaveAs = $("#storytitle").val();
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+$("#downloadstory").click(function(){
+    saveStory();
+})
+$("#storytitle").keyup(function(event){
+    if (event.keyCode == 13 && $.trim($("#storytitle").val()).length>0){
+        $("#downloadstory").click();
+    }
 });
 
 //Loading
