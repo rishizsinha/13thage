@@ -26,14 +26,41 @@
 
 <body>
 	<div class="container content-container center" style="margin-top:35px; margin-bottom:20px">
-			<h1> 13th Age Character Tracker </h1>
+		<h1 class="ib"> 13th Age Character Tracker </h1>
+		<!-- <button class="btn btn-default" type="button" style="float:right" id="savebutton">Rest and Save</button>
+		<button class="btn btn-default" type="button" data-toggle="modal" data-target="#saveModal" style="float:right">Continue Journey</button> -->
+		
+
+	  <!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-default" data-toggle="modal" style="float:right;" data-target="#saveModal">Record Journey</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="saveModal" role="dialog">
+	    <div class="modal-dialog">
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Save Character</h4>
+	        </div>
+	        <div class="modal-body">
+	          <p class="ib">File Name: </p>
+	          <input type="text" id="saveName">
+	          <button type="button" class="btn btn-default" id="saveButton">Save!</button>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 	</div>
 
 	<!-- KEY ATTRIBUTES -->
 	<div class="container content-container center">
 		<h2> Character Attributes </h2>
 		<p style="display:inline-block">Name:</p>
-		<input type="text">
+		<input type="text" id="name">
 
 		<p style="display:inline-block">Race:</p>
 		<select class="selectpicker" id="race">
@@ -129,8 +156,8 @@
 						<p class="ib" id="maxhp">8</p>&nbsp;&nbsp;
 
 						<p class="ib">Recoveries:</p>
-						<input class="center numwidth" type="number" id="str" value="8"> /
-						<input class="center numwidth" type="number" id="str" value="8">
+						<input class="center numwidth" type="number" value="8" id="currecoveries"> /
+						<input class="center numwidth" type="number" value="8" id="maxrecoveries">
 						<p class="ib" id='recoverydie'></p>
 					</td>
 				</tr>

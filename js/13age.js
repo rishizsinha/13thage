@@ -191,3 +191,56 @@ $("#enterLog").click(function(){
 //     }
 // });
 
+// Saving
+function saveTextAsFile() {
+    var mychar = {
+        "name":$("#name").val(),
+        "race":$("#race").val(),
+        "class":$("#classs").val(),
+        "level":$("#level").val(),
+        "cha":$("#cha").val(),
+        "dex":$("#dex").val(),
+        "int":$("#int").val(),
+        "wis":$("#wis").val(),
+        "str":$("#str").val(),
+        "con":$("#con").val(),
+        "gp":$("#goldAmt").val(),
+        "curhp":$("#curhp").val(),
+        "currecoveries":$("#currecoveries").val(),
+        "maxrecoveries":$("#maxrecoveries").val(),
+        "story":[
+
+        ]
+    };
+    $("#logHistory").find("p").each(function(){
+        mychar["story"].push($(this).html())
+    })
+    var textToWrite = JSON.stringify(mychar);
+    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+    var fileNameToSaveAs = $("#saveName").val();
+
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    if (window.webkitURL != null)
+    {
+        // Chrome allows the link to be clicked
+        // without actually adding it to the DOM.
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    }
+    else
+    {
+        // Firefox requires the link to be added to the DOM
+        // before it can be clicked.
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    }
+
+    downloadLink.click();
+}
+$("#saveButton").click(function(){
+    saveTextAsFile();
+})
+
