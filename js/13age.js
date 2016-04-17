@@ -135,6 +135,10 @@ $("#level").change(function(){
     $("#con").change();
     $("#str").change();
     adjustMaxHP();
+    $("#numafs").html(calcAFs())
+    $("#numtalents").html(calcTalents())
+    $("#numcfs").html(calcCFs())
+    $("#numefs").html(calcEFs())
 });
 
 // Gold
@@ -176,6 +180,45 @@ $("#inventoryspace").on("click", "button", function(){
     var id = $(event.target)[0].id.replace("Remove","");
     $("#"+id).remove();
 });
+
+// Powers
+var talents = []
+var afs = []
+var cfs = []
+var efs = []
+function calcTalents() {
+    if ($("#classs").val() == "Sorcerer"){
+        return 3 - talents.length;
+    } else {
+        return 3
+    }
+}
+function calcAFs() {
+    var l = parseInt($("#level").val());
+    if (l < 4) {
+        return l - afs.length;
+    } else {
+        return 4 - afs.length;
+    }
+}
+function calcCFs() {
+    var l = parseInt($("#level").val());
+    if (l < 5) {
+        return 0;
+    } else if (l < 7) {
+        return l-4 - cfs.length;
+    } else {
+        return 3-cfs.length;
+    }
+}
+function calcEFs() {
+    var l = parseInt($("#level").val());
+    if (l < 8) {
+        return 0;
+    } else {
+        return l-7 - efs.length
+    }
+}
 
 // Logging
 $("#enterLog").click(function(){
