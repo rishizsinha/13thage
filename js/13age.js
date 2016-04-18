@@ -220,6 +220,22 @@ function calcEFs() {
     }
 }
 
+function loadPower(from, to, isclass) {
+    if (!isclass) {
+        $.getJSON("http://rishizsinha.github.io/13thage/data/"+file+".json")
+            .done(function(data){
+                for (var i in data) {
+                    $("#"+to).append(createPower(data[i]));
+                }
+            });
+    } else {
+        return
+    }
+}
+function createPower(power){
+    return "<div style='border-style:solid; font-family:fantasy;margin-bottom:40px'><h3 class='ib'>"+power["ability"]+"</h3><div class='ib' style='border-radius:50%;width:20px;height:20px;background:green'></div><div class='ib' style='border-radius:50%;width:20px;height:20px;background:green'></div><div class='ib' style='border-radius:50%;width:20px;height:20px;background:green'></div><p style='margin-bottom:20px'>"+power["text"]+"</p><div class='ib' style='border-style:solid; font-family:fantasy;margin-right:10px;width:30%;margin-left:30px'>"+power["afs"]+"</div><div class='ib' style='border-style:solid; font-family:fantasy;margin-right:10px;width:30%'>"+power["cfs"]+"</div><div class='ib' style='border-style:solid; font-family:fantasy;margin-right:10px;width:30%'>"+power["efs"]+"</div></div>"
+}
+
 // Logging
 $("#enterLog").click(function(){
     if ($.trim($("#newEntry").val()).length>0){
