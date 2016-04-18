@@ -40,3 +40,16 @@ input{
 	height:18px;
 
 }
+
+.featselect {
+	border: 5px  solid #0800ff;
+	box-shadow: inset 0px 0px 0px #222 , 0px 0px 10px #ddf;
+	animation: pulsate 3s infinite;
+}
+
+@keyframes pulsate {
+  0%  { box-shadow: inset 0px 0px 0px #222 , 0px 0px 10px #fff; }
+  50% { box-shadow: inset 0px 0px 0px #222 , 0px 0px 20px #ddf;
+  		border-color: #00e9ff;}
+  100% { box-shadow: inset 0px 0px 0px #222 , 0px 0px 10px #ddf;; } 
+}

@@ -235,7 +235,10 @@ function loadPower(from, to, isclass) {
     }
 }
 function createPower(power){
-    var s = "<div id='"+power["ability"].replace(/\s+/g, '')+"'style='border-style:solid; font-family:fantasy;margin-bottom:40px'><h3 class='ib'>"+power["ability"]+"</h3><div class='ib' style='border-radius:50%;width:20px;height:20px;background:green'></div><div class='ib' style='border-radius:50%;width:20px;height:20px;background:green'></div><div class='ib' style='border-radius:50%;width:20px;height:20px;background:green'></div><p style='margin-bottom:20px'>"+power["text"]+"</p>"
+    var s = "<div id='"+power["ability"].replace(/\s+/g, '')+"'style='border-style:solid; font-family:fantasy;margin-bottom:40px'><h3 class='ib'>"+power["ability"]+"</h3>"
+    if (power["text"] != "") {
+        s += "<p style='margin-bottom:20px'>"+power["text"]+"</p>"
+    }
     if (power['af'] != "") {
         s += "<div class='af' style='border-style:solid;font-family:fantasy;margin:0 auto;width:98%;margin-bottom:5px;'>Adventurer Feat:"+power['af']+"</div>"
     }
@@ -251,8 +254,10 @@ $("#powerinfo").on("click", ".af", function(){
     var i = this.parentElement.id;
     if (afs.indexOf(i) > -1) {
         afs.splice(afs.indexOf(i), 1)
+        $(this).removeClass("featselect")
     } else if (calcAFs() > 0) {
         afs.push(i); 
+        $(this).addClass("featselect");
     }
     $("#numafs").html(calcAFs())
 });
@@ -260,8 +265,10 @@ $("#powerinfo").on("click", ".cf", function(){
     var i = this.parentElement.id;
     if (cfs.indexOf(i) > -1) {
         cfs.splice(cfs.indexOf(i), 1)
+        $(this).removeClass("featselect")
     } else if (calcCFs() > 0) {
         cfs.push(i); 
+        $(this).addClass("featselect");
     }
     $("#numcfs").html(calcCFs())
 });
@@ -269,8 +276,10 @@ $("#powerinfo").on("click", ".ef", function(){
     var i = this.parentElement.id;
     if (efs.indexOf(i) > -1) {
         efs.splice(efs.indexOf(i), 1)
+        $(this).removeClass("featselect")
     } else if (calcEFs() > 0) {
         efs.push(i); 
+        $(this).addClass("featselect");
     }
     $("#numefs").html(calcEFs())
 });
