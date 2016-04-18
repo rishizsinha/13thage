@@ -222,14 +222,18 @@ function calcEFs() {
 
 function loadPower(from, to, isclass) {
     if (!isclass) {
-        $.getJSON("http://rishizsinha.github.io/13thage/data/"+file+".json")
+        $.getJSON("http://rishizsinha.github.io/13thage/data/"+from+".json")
             .done(function(data){
+                console.log(data);
                 for (var i in data) {
+                    console.log(data[i])
                     $("#"+to).append(createPower(data[i]));
                 }
+            }).fail( function(d, textStatus, error) {
+                console.error("getJSON failed, status: " + textStatus + ", error: "+error)
             });
     } else {
-        return
+        return 4;
     }
 }
 function createPower(power){
